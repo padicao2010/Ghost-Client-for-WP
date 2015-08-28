@@ -1,10 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Express 2013 for Windows
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "XML-RPC Blog Cllient", "XML-RPC Blog Cllient\XML-RPC Blog Cllient.vcxproj", "{BFBD5BEA-3203-4E9F-B049-FA407F5ED77D}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GhostBlogClient", "GhostBlogClient", "{DCE71BF8-E25E-47B0-9A46-D07804620740}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GhostBlogClient.Shared", "GhostBlogClient\GhostBlogClient.Shared\GhostBlogClient.Shared.vcxitems", "{B5628646-74BF-4D92-B3DE-711030E4F562}"
@@ -12,6 +10,14 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GhostBlogClient.Windows", "GhostBlogClient\GhostBlogClient.Windows\GhostBlogClient.Windows.vcxproj", "{7177A907-34E0-4907-BA6C-2D50A77E9668}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GhostBlogClient.WindowsPhone", "GhostBlogClient\GhostBlogClient.WindowsPhone\GhostBlogClient.WindowsPhone.vcxproj", "{EAE8F06A-D472-4791-88BC-4C4561666EA1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{78ABE4D4-A0CE-48E4-A7D5-08EAD08B9ECA}"
+	ProjectSection(SolutionItems) = preProject
+		ChangeLog.md = ChangeLog.md
+		LICENSE.txt = LICENSE.txt
+		README.md = README.md
+		TODO.md = TODO.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
@@ -28,20 +34,6 @@ Global
 		Release|x64 = Release|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{BFBD5BEA-3203-4E9F-B049-FA407F5ED77D}.Debug|ARM.ActiveCfg = Debug|ARM
-		{BFBD5BEA-3203-4E9F-B049-FA407F5ED77D}.Debug|ARM.Build.0 = Debug|ARM
-		{BFBD5BEA-3203-4E9F-B049-FA407F5ED77D}.Debug|ARM.Deploy.0 = Debug|ARM
-		{BFBD5BEA-3203-4E9F-B049-FA407F5ED77D}.Debug|Win32.ActiveCfg = Debug|Win32
-		{BFBD5BEA-3203-4E9F-B049-FA407F5ED77D}.Debug|Win32.Build.0 = Debug|Win32
-		{BFBD5BEA-3203-4E9F-B049-FA407F5ED77D}.Debug|Win32.Deploy.0 = Debug|Win32
-		{BFBD5BEA-3203-4E9F-B049-FA407F5ED77D}.Debug|x64.ActiveCfg = Debug|Win32
-		{BFBD5BEA-3203-4E9F-B049-FA407F5ED77D}.Release|ARM.ActiveCfg = Release|ARM
-		{BFBD5BEA-3203-4E9F-B049-FA407F5ED77D}.Release|ARM.Build.0 = Release|ARM
-		{BFBD5BEA-3203-4E9F-B049-FA407F5ED77D}.Release|ARM.Deploy.0 = Release|ARM
-		{BFBD5BEA-3203-4E9F-B049-FA407F5ED77D}.Release|Win32.ActiveCfg = Release|Win32
-		{BFBD5BEA-3203-4E9F-B049-FA407F5ED77D}.Release|Win32.Build.0 = Release|Win32
-		{BFBD5BEA-3203-4E9F-B049-FA407F5ED77D}.Release|Win32.Deploy.0 = Release|Win32
-		{BFBD5BEA-3203-4E9F-B049-FA407F5ED77D}.Release|x64.ActiveCfg = Release|Win32
 		{7177A907-34E0-4907-BA6C-2D50A77E9668}.Debug|ARM.ActiveCfg = Debug|ARM
 		{7177A907-34E0-4907-BA6C-2D50A77E9668}.Debug|ARM.Build.0 = Debug|ARM
 		{7177A907-34E0-4907-BA6C-2D50A77E9668}.Debug|ARM.Deploy.0 = Debug|ARM
