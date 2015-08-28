@@ -1,0 +1,45 @@
+﻿<Page
+    x:Class="GhostBlogClient.LoginPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:GhostBlogClient"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid x:Name="LayoutRoot">
+
+        <Grid.ChildrenTransitions>
+            <TransitionCollection>
+                <EntranceThemeTransition/>
+            </TransitionCollection>
+        </Grid.ChildrenTransitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- 标题面板 -->
+        <StackPanel Grid.Row="0" Margin="19,0,0,0">
+            <TextBlock Text="Ghost 博客客户端" Style="{ThemeResource TitleTextBlockStyle}" Margin="0,12,0,0"/>
+            <TextBlock Text="登录" Margin="0,-6.5,0,26.5" Style="{ThemeResource HeaderTextBlockStyle}" CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}"/>
+        </StackPanel>
+
+        <!--TODO: 应将内容放入以下网格-->
+        <Grid Grid.Row="1" x:Name="ContentRoot" Margin="19,9.5,19,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0">
+                <TextBox x:Name="LoginSiteInput" Margin="0" TextWrapping="Wrap" Text="" VerticalAlignment="Stretch" Header="站点（建议使用 https）" PlaceholderText="https://example.com"/>
+                <TextBox x:Name="LoginEmailInput" Margin="0" TextWrapping="Wrap" Text="" VerticalAlignment="Stretch" Header="邮箱" PlaceholderText="user@example.com"/>
+                <PasswordBox x:Name="LoginPasswordInput" Margin="0" VerticalAlignment="Stretch" Password="" PlaceholderText="password" Header="密码"/>
+                <Button x:Name="LoginLoginButton" Click="LoginButtonClick" Content="登录" VerticalAlignment="Top" HorizontalAlignment="Right"/>
+                <TextBlock x:Name="LoginInfoText" TextWrapping="Wrap" Text="" Margin="10,18,10,0" FontSize="21.333" Foreground="#FFF01919"/>
+            </StackPanel>
+
+        </Grid>
+    </Grid>
+</Page>

@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+		<title>GitHub Markdown CSS demo</title>
+		<link rel="stylesheet" href="github-markdown.min.css">
+		<link rel="stylesheet" href="hightlight-default.min.css">
+		<script src="highlight.min.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+        <style>
+            body {
+                min-width: 200px;
+                max-width: 790px;
+                margin: 0 auto;
+                padding: 30px;
+            }
+        </style>
+	</head>
+	<body>
+		<article class="markdown-body">
+			<h1>GitHub Markdown CSS demo</h1>
+			<blockquote>
+				<p>Bacon ipsum dolor sit amet filet mignon ribeye swine jerky porchetta beef ribs.</p>
+			</blockquote>
+			<p>Bacon pastrami ham hock tongue t-bone, <code>ham shankle</code> capicola biltong fatback shoulder pork tenderloin boudin. Pastrami sausage short ribs, pig bacon shoulder biltong ham. Sausage shankle meatball pork loin, pancetta flank pork frankfurter pig pork chop ham hock chicken ribeye capicola.</p>
+			<ul>
+				<li>Foo</li>
+				<li>Bar</li>
+			</ul>
+			<h2>Header</h2>
+			<p>Swine short ribs turkey short loin doner pastrami biltong cow boudin. Kielbasa kevin turkey, landjaeger andouille chicken swine flank fatback frankfurter filet mignon spare ribs sausage porchetta shankle. Beef ribs tri-tip landjaeger turducken corned beef. Jerky meatloaf salami beef, beef ribs drumstick pork ribeye shankle strip steak pork chop. Meatloaf short ribs chicken strip steak bresaola ground round short loin ham leberkas turducken ball tip biltong turkey cow. Venison porchetta tail short ribs pastrami. Bresaola tail fatback drumstick kevin meatball pork loin.</p>
+			<div><pre><code>int main() {
+	return 0;
+}</code></pre></div>
+				<div><pre><code>var gulp = require('gulp');
+var myth = require('gulp-myth');
+
+gulp.task('default', function () {
+    return gulp.src('src/app.css')
+        .pipe(myth())
+        .pipe(gulp.dest('dist'));
+});</code></pre></div>
+		</article>
+		<a href="https://github.com/sindresorhus/github-markdown-css"><img style="position: absolute; top: 0; right: 0; border: 0; width: 149px; height: 149px;" src="http://aral.github.com/fork-me-on-github-retina-ribbons/right-graphite@2x.png" alt="Fork me on GitHub"></a>
+	</body>
+</html>
+

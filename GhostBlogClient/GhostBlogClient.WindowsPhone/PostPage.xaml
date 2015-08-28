@@ -1,0 +1,77 @@
+﻿<Page
+    x:Class="GhostBlogClient.PostPage"
+    DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Self}}"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:GhostBlogClient"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Page.Resources>
+        <CollectionViewSource
+        x:Name="tagsBoxSource"
+        Source="{Binding Tags}"/>
+    </Page.Resources>
+    <Page.BottomAppBar>
+        <CommandBar>
+            <AppBarButton x:Name="PostSubmitButton" Icon="Accept" Label="提交" Click="PostSubmitButtonClick"/>
+        </CommandBar>
+    </Page.BottomAppBar>
+
+    <Grid x:Name="LayoutRoot">
+
+        <Grid.ChildrenTransitions>
+            <TransitionCollection>
+                <EntranceThemeTransition/>
+            </TransitionCollection>
+        </Grid.ChildrenTransitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Title Panel -->
+        <StackPanel Grid.Row="0" Margin="19,0,0,0">
+            <TextBlock x:Name="PostHeaderText" Text="Ghost 博客客户端 -- 博文编辑" Style="{ThemeResource TitleTextBlockStyle}" Margin="0,12,0,0"/>
+        </StackPanel>
+
+        <!--TODO: Content should be placed within the following grid-->
+        <Grid Grid.Row="1" x:Name="ContentRoot" Margin="19,9.5,19,0">
+            <ScrollViewer Grid.RowSpan="2" HorizontalScrollMode="Disabled">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBox x:Name="PostTitleInput" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" TextWrapping="Wrap" Text="{Binding CurrentPost.Title}" VerticalAlignment="Stretch" d:LayoutOverrides="Width, Height" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" BorderBrush="{ThemeResource ApplicationPageBackgroundThemeBrush}" Grid.ColumnSpan="2" FontSize="32" FontWeight="Bold" Foreground="{ThemeResource ApplicationForegroundThemeBrush}" PlaceholderText="在这里输入标题"/>
+                    <TextBlock x:Name="textBlock" TextWrapping="Wrap" Text="Slug" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="21.333"/>
+                    <TextBox x:Name="PostSlugInput" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" Margin="0,0,1,0.167" TextWrapping="Wrap" Text="{Binding CurrentPost.Slug}" VerticalAlignment="Stretch" d:LayoutOverrides="Width, Height" Grid.Row="1" Grid.Column="1" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" BorderBrush="{ThemeResource ApplicationPageBackgroundThemeBrush}" FontSize="21.333" Foreground="{ThemeResource ApplicationForegroundThemeBrush}" PlaceholderText="输入 Slug，可以为空"/>
+                    <TextBlock x:Name="textBlock1" HorizontalAlignment="Center" TextWrapping="Wrap" Text="发布" VerticalAlignment="Center" Grid.Row="2" FontSize="21.333"/>
+                    <CheckBox x:Name="PostPublishInput" Content="" d:LayoutOverrides="Width, Height" Grid.Row="2" Grid.Column="1" VerticalAlignment="Stretch" MinWidth="167" BorderBrush="{ThemeResource ApplicationForegroundThemeBrush}" Margin="10,0,0,0"/>
+                    <TextBlock x:Name="textBlock2" HorizontalAlignment="Center" TextWrapping="Wrap" Text="标签" VerticalAlignment="Center" Grid.Row="3" FontSize="21.333"/>
+                    <ListBox x:Name="PostTagsInput" Grid.Row="3" Grid.Column="1" ItemsSource="{Binding Source={StaticResource tagsBoxSource}}" SelectionMode="Multiple" ScrollViewer.VerticalScrollBarVisibility="Visible" MaxHeight="100" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Foreground="{ThemeResource ApplicationForegroundThemeBrush}" BorderBrush="{ThemeResource ApplicationForegroundThemeBrush}">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <TextBlock Text="{Binding Name}"  TextWrapping="NoWrap" MaxHeight="40" FontSize="24"/>
+                                </Grid>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                    <TextBox x:Name="PostMarkdownInput"  GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" TextWrapping="Wrap" Text="{Binding CurrentPost.Markdown}" VerticalAlignment="Stretch" d:LayoutOverrides="Width, Height" Grid.Row="4" Grid.ColumnSpan="2" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" BorderBrush="{ThemeResource ApplicationPageBackgroundThemeBrush}" FontSize="21.333" Foreground="{ThemeResource ApplicationForegroundThemeBrush}" PlaceholderText="在这里输入正文" AcceptsReturn="True" MaxHeight="500" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+                </Grid>
+            </ScrollViewer>
+
+        </Grid>
+    </Grid>
+</Page>
